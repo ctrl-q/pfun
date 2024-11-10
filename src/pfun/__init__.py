@@ -11,7 +11,7 @@ from .list import List  # noqa
 from .maybe import Just, Maybe, Nothing  # noqa
 
 try:
-    from . import http, sql, hypothesis_strategies  # noqa
+    from . import http, hypothesis_strategies, sql  # noqa
 except ImportError:
     pass
 

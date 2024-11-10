@@ -6,20 +6,11 @@ from . import (Dict, Immutable, List, aio_trampoline, effect, either, maybe,
                trampoline)
 
 try:
-    from hypothesis.strategies import (
-        booleans,
-        builds,
-        composite,
-        dictionaries,
-        floats,
-        integers,
-        just,
-        lists as lists_,
-        one_of,
-        recursive,
-        text,
-        SearchStrategy
-    )
+    from hypothesis.strategies import (SearchStrategy, booleans, builds,
+                                       composite, dictionaries, floats,
+                                       integers, just)
+    from hypothesis.strategies import lists as lists_
+    from hypothesis.strategies import one_of, recursive, text
 except ImportError:
     raise ImportError(
         'Could not import hypothesis. To use pfun.hypothesis_strategies, '
