@@ -20,7 +20,7 @@ jobs:
       with:
         python-version: 3.10.4
     - name: Restore cache
-      uses: actions/cache@f5ce41475b483ad7581884324a6eca9f48f8dcc7 # v1
+      uses: actions/cache@e12d46a63a90f2fae62d114769bbf2a179198b5c # v3
       with:
         path: .venv
         key: py3.10-ubuntu-latest-venv-cache-${{ hashFiles('**/poetry.lock') }}
@@ -46,7 +46,7 @@ jobs:
       with:
         python-version: 3.7
     - name: Restore cache
-      uses: actions/cache@f5ce41475b483ad7581884324a6eca9f48f8dcc7 # v1
+      uses: actions/cache@e12d46a63a90f2fae62d114769bbf2a179198b5c # v3
       with:
         path: .venv
         key: py3.7-ubuntu-latest-venv-cache-${{ hashFiles('**/poetry.lock') }}
@@ -71,7 +71,7 @@ jobs:
       with:
         python-version: 3.10.4
     - name: Restore cache
-      uses: actions/cache@f5ce41475b483ad7581884324a6eca9f48f8dcc7 # v1
+      uses: actions/cache@e12d46a63a90f2fae62d114769bbf2a179198b5c # v3
       with:
         path: .venv
         key: py3.10-ubuntu-latest-venv-cache-${{ hashFiles('**/poetry.lock') }}
@@ -106,7 +106,7 @@ jobs:
       with:
         python-version: ${{ matrix.python-version }}
     - name: Restore cache
-      uses: actions/cache@f5ce41475b483ad7581884324a6eca9f48f8dcc7 # v1
+      uses: actions/cache@e12d46a63a90f2fae62d114769bbf2a179198b5c # v3
       with:
         path: .venv
         key: py${{ matrix.python-version }}-${{ matrix.os }}-venv-cache-${{ hashFiles('**/poetry.lock') }}
@@ -140,7 +140,7 @@ jobs:
       with:
         python-version: 3.7
     - name: Restore cache
-      uses: actions/cache@f5ce41475b483ad7581884324a6eca9f48f8dcc7 # v1
+      uses: actions/cache@e12d46a63a90f2fae62d114769bbf2a179198b5c # v3
       with:
         path: .venv
         key: py3.7-ubuntu-latest-venv-cache-${{ hashFiles('**/poetry.lock') }}
