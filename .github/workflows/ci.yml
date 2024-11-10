@@ -14,13 +14,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
-      uses: actions/checkout@v2
+      uses: actions/checkout@ee0669bd1cc54295c223e0bb666b733df41de1c5 # v2
     - name: Set up Python
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@e9aba2c848f5ebd159c070c61ea2c4e2b122355e # v2
       with:
         python-version: 3.10.4
     - name: Restore cache
-      uses: actions/cache@v1
+      uses: actions/cache@f5ce41475b483ad7581884324a6eca9f48f8dcc7 # v1
       with:
         path: .venv
         key: py3.10-ubuntu-latest-venv-cache-${{ hashFiles('**/poetry.lock') }}
@@ -40,13 +40,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
-      uses: actions/checkout@v2
+      uses: actions/checkout@ee0669bd1cc54295c223e0bb666b733df41de1c5 # v2
     - name: Set up Python
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@e9aba2c848f5ebd159c070c61ea2c4e2b122355e # v2
       with:
         python-version: 3.7
     - name: Restore cache
-      uses: actions/cache@v1
+      uses: actions/cache@f5ce41475b483ad7581884324a6eca9f48f8dcc7 # v1
       with:
         path: .venv
         key: py3.7-ubuntu-latest-venv-cache-${{ hashFiles('**/poetry.lock') }}
@@ -65,13 +65,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
-      uses: actions/checkout@v2
+      uses: actions/checkout@ee0669bd1cc54295c223e0bb666b733df41de1c5 # v2
     - name: Set up Python
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@e9aba2c848f5ebd159c070c61ea2c4e2b122355e # v2
       with:
         python-version: 3.10.4
     - name: Restore cache
-      uses: actions/cache@v1
+      uses: actions/cache@f5ce41475b483ad7581884324a6eca9f48f8dcc7 # v1
       with:
         path: .venv
         key: py3.10-ubuntu-latest-venv-cache-${{ hashFiles('**/poetry.lock') }}
@@ -88,7 +88,7 @@ jobs:
     - name: Run tests
       run: poetry run pytest -n 4 --mypy-ini-file=tests/mypy.ini
     - name: Upload sdist
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@82c141cc518b40d92cc801eee768e7aafc9c2fa2 # v2
       with:
         name: sdist
         path: dist/*.tar.gz
@@ -100,13 +100,13 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
     - name: Checkout
-      uses: actions/checkout@v2
+      uses: actions/checkout@ee0669bd1cc54295c223e0bb666b733df41de1c5 # v2
     - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@e9aba2c848f5ebd159c070c61ea2c4e2b122355e # v2
       with:
         python-version: ${{ matrix.python-version }}
     - name: Restore cache
-      uses: actions/cache@v1
+      uses: actions/cache@f5ce41475b483ad7581884324a6eca9f48f8dcc7 # v1
       with:
         path: .venv
         key: py${{ matrix.python-version }}-${{ matrix.os }}-venv-cache-${{ hashFiles('**/poetry.lock') }}
@@ -124,7 +124,7 @@ jobs:
       if: ${{matrix.python-version!='3.7'}}
       run: poetry run pytest -n 4 --mypy-ini-file=tests/mypy.ini
     - name: Upload wheel
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@82c141cc518b40d92cc801eee768e7aafc9c2fa2 # v2
       with:
         name: wheel-${{ matrix.os }}-py${{ matrix.python-version }}
         path: dist/*.whl
@@ -134,13 +134,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
-      uses: actions/checkout@v2
+      uses: actions/checkout@ee0669bd1cc54295c223e0bb666b733df41de1c5 # v2
     - name: Set up Python
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@e9aba2c848f5ebd159c070c61ea2c4e2b122355e # v2
       with:
         python-version: 3.7
     - name: Restore cache
-      uses: actions/cache@v1
+      uses: actions/cache@f5ce41475b483ad7581884324a6eca9f48f8dcc7 # v1
       with:
         path: .venv
         key: py3.7-ubuntu-latest-venv-cache-${{ hashFiles('**/poetry.lock') }}
@@ -149,7 +149,7 @@ jobs:
         pip install poetry>=1.5.0
         poetry config virtualenvs.in-project true
     - name: Download wheels and sdist
-      uses: actions/download-artifact@v2
+      uses: actions/download-artifact@cbed621e49e4c01b044d60f6c80ea4ed6328b281 # v2
     - name: Gather artifacts
       run: |
         mkdir dist
