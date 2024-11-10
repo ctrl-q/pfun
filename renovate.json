@@ -1,6 +1,39 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "addLabels": ["dependencies"],
+  "bumpVersion": "patch",
   "extends": [
-    "config:recommended"
+    ":automergeDisabled",
+    ":enablePreCommit",
+    ":enableVulnerabilityAlerts",
+    ":docker",
+    ":prHourlyLimitNone",
+    "config:best-practices",
+    "docker:enableMajor",
+    "customManagers:dockerfileVersions",
+    "customManagers:githubActionsVersions",
+    "preview:dockerCompose",
+    "preview:dockerVersions",
+    "schedule:daily"
+  ],
+  "lockFileMaintenance": { "enabled": true },
+  "major": {
+    "minimumReleaseAge": "1 month"
+  },
+  "minor": {
+    "minimumReleaseAge": "2 weeks"
+  },
+  "customManagers": [
+    {
+      "customType": "regex",
+      "description": "Updates python packages in devcontainer Dockerfile",
+      "fileMatch": [
+        "(^|/).devcontainer/Dockerfile$"
+      ],
+      "datasourceTemplate": "pypi",
+      "matchStrings": [
+        "(?<depName>[a-zA-Z0-9][a-zA-Z0-9._-]*[a-zA-Z0-9])(\\[[a-zA-Z0-9._-]+\\])?([~<>!]=?|==)(?<currentValue>[a-zA-Z0-9._-]+)"
+      ]
+    }
   ]
 }
