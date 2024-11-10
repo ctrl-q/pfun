@@ -3,7 +3,7 @@
   "addLabels": ["dependencies"],
   "bumpVersion": "patch",
   "extends": [
-    ":automergeDisabled",
+    ":automergeAll",
     ":enablePreCommit",
     ":enableVulnerabilityAlerts",
     ":docker",
