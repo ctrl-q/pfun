@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pfun"
-version = "0.13.11"
+version = "0.13.12"
 description = "Functional, composable, asynchronous, type-safe Python."
 authors = ["Sune Debel"]
 readme = "README.md"
@@ -28,7 +28,7 @@ Cython = [
 ]
 pytest-mypy-plugins = "^1.9.3"
 pytest-asyncio = "^0.11.0"
-pytest = "^6.2.2"
+pytest = "^8.0.0"
 hypothesis = "^6.8.5"
 ipython = "^7.7"
 ipdb = "^0.13.0"
