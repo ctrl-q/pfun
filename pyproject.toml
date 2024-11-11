@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pfun"
-version = "0.13.10"
+version = "0.13.11"
 description = "Functional, composable, asynchronous, type-safe Python."
 authors = ["Sune Debel"]
 readme = "README.md"
@@ -38,7 +38,7 @@ yapf = "^0.40.0"
 mypy = "0.950"
 isort = "^5.0.0"
 pre-commit = "^4.0.0"
-pre-commit-hooks = "^3.1.0"
+pre-commit-hooks = "^5.0.0"
 main-dec = "^0.1.1"
 mkdocs = "^1.3.0"
 mkdocstrings = { version = "^0.18.1", extras = [] }
