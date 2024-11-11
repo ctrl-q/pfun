@@ -29,7 +29,7 @@
       "description": "Updates python packages in custom files",
       "fileMatch": [
         "(^|/).devcontainer/Dockerfile$",
-        "(^|/).github/workflows/.*\\.yml$",
+        "(^|/).github/workflows/.*\\.yml$"
       ],
       "datasourceTemplate": "pypi",
       "matchStrings": [
