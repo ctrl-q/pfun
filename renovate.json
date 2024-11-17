@@ -48,13 +48,6 @@
       "matchPackageNames": [
         "/mypy/"
       ]
-    },
-    {
-      "groupName": "mkdocs and related packages",
-      "groupSlug": "mkdocs-packages",
-      "matchPackageNames": [
-        "/mkdocs/"
-      ]
     }
   ]
 }
