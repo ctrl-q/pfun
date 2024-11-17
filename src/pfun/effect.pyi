@@ -1,19 +1,19 @@
-from datetime import timedelta
-from typing import (Any, AsyncContextManager, Awaitable, Callable, Generic,
-                    Iterable, NoReturn, Optional, Tuple, Type, TypeVar, Union,
-                    overload, Iterator)
-from typing_extensions import ParamSpec
+import asyncio
 from concurrent.futures import ProcessPoolExecutor, ThreadPoolExecutor
 from contextlib import AsyncExitStack
-import asyncio
+from datetime import timedelta
+from typing import (Any, AsyncContextManager, Awaitable, Callable, Generic,
+                    Iterable, Iterator, NoReturn, Optional, Tuple, Type,
+                    TypeVar, Union, overload)
 
+from typing_extensions import ParamSpec
+
+from pfun import Intersection
+from pfun.clock import HasClock
+from pfun.either import Either, Left, Right
 from pfun.functions import curry
 from pfun.immutable import Immutable
-from pfun.either import Either, Left, Right
 from pfun.monad import Monad
-from pfun.clock import HasClock
-from pfun import Intersection
-
 
 R = TypeVar('R', contravariant=True)
 E = TypeVar('E', covariant=True)

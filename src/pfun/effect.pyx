@@ -6,18 +6,17 @@ Attributes:
     Try (TypeAlias): Type-alias for `Effect[object, TypeVar('E'), TypeVar('A')]`.
     Depends (TypeAlias): Type-alias for `Effect[TypeVar('R'), NoReturn, TypeVar('A')]`.
 """
-from typing import Generic, TypeVar, NoReturn
-from typing_extensions import get_origin
 import asyncio
+import inspect
 from concurrent.futures import ProcessPoolExecutor, ThreadPoolExecutor
 from contextlib import AsyncExitStack
 from functools import wraps
-import inspect
+from typing import Generic, NoReturn, TypeVar
 
 import dill
-from typing_extensions import Protocol, runtime_checkable
+from typing_extensions import Protocol, get_origin, runtime_checkable
 
-from .either import Right, Left
+from .either import Left, Right
 from .functions import curry
 
 
