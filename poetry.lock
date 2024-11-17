@@ -937,13 +937,13 @@ dev = ["flake8", "markdown", "twine", "wheel"]
 
 [[package]]
 name = "hypothesis"
-version = "6.119.0"
+version = "6.119.2"
 description = "A library for property-based testing"
 optional = false
 python-versions = ">=3.9"
 files = [
-    {file = "hypothesis-6.119.0-py3-none-any.whl", hash = "sha256:99d660bfdab62cfd7c9966e3829a217697671e0b992f0372b5b43647b3414471"},
-    {file = "hypothesis-6.119.0.tar.gz", hash = "sha256:ca441c6ef55d17f27f642fa08657e80f9c13d9da7ae191c8ad58fbc2f16acd1b"},
+    {file = "hypothesis-6.119.2-py3-none-any.whl", hash = "sha256:0de7ac207578d1bb5719a71b67f6d2ed8bad8aeab32b2f1f38647bd20af3ded5"},
+    {file = "hypothesis-6.119.2.tar.gz", hash = "sha256:001ea8eda13edba31d67bea1fa8843880a0d6312cc22dc83710adb242efbec14"},
 ]
 
 [package.dependencies]
@@ -2607,4 +2607,4 @@ test = ["hypothesis"]
 [metadata]
 lock-version = "2.0"
 python-versions = ">= 3.10, < 3.12"
-content-hash = "0c78ebf01d69691c243080979cecadbd1a1c58d11e104a76d96d069ae15838a4"
+content-hash = "d83a0e3237f03b80ea8cf6ff40472691791fbef744c46322db6aa8c8705c9174"
