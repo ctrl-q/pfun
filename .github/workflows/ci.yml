@@ -44,12 +44,12 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@65d7f2d534ac1bc67fcd62888c5f4f3d2cb2b236 # v4
       with:
-        python-version: 3.7
+        python-version: 3.10.4
     - name: Restore cache
       uses: actions/cache@e12d46a63a90f2fae62d114769bbf2a179198b5c # v3
       with:
         path: .venv
-        key: py3.7-ubuntu-latest-venv-cache-${{ hashFiles('**/poetry.lock') }}
+        key: py3.10-ubuntu-latest-venv-cache-${{ hashFiles('**/poetry.lock') }}
     - name: Install poetry
       run: |
         pip install poetry>=1.5.0
@@ -95,8 +95,8 @@ jobs:
   test_wheel:
     strategy:
       matrix:
-        os: [ubuntu-latest]
-        python-version: ['3.7', '3.8', '3.9', '3.10', '3.11']
+        os: [ubuntu-latest, macos-latest]
+        python-version: ['3.10', '3.11']
     runs-on: ${{ matrix.os }}
     steps:
     - name: Checkout
@@ -121,7 +121,6 @@ jobs:
         poetry build -f wheel
         poetry run pip install --ignore-installed dist/*
     - name: Run tests
-      if: ${{matrix.python-version!='3.7'}}
       run: poetry run pytest -n 4 --mypy-ini-file=tests/mypy.ini
     - name: Upload wheel
       uses: actions/upload-artifact@b4b15b8c7c6ac21ea08fcf65892d2ee8f75cf882 # v4
@@ -138,12 +137,12 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@65d7f2d534ac1bc67fcd62888c5f4f3d2cb2b236 # v4
       with:
-        python-version: 3.7
+        python-version: 3.10.4
     - name: Restore cache
       uses: actions/cache@e12d46a63a90f2fae62d114769bbf2a179198b5c # v3
       with:
         path: .venv
-        key: py3.7-ubuntu-latest-venv-cache-${{ hashFiles('**/poetry.lock') }}
+        key: py3.10-ubuntu-latest-venv-cache-${{ hashFiles('**/poetry.lock') }}
     - name: Install poetry
       run: |
         pip install poetry>=1.5.0
