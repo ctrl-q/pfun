@@ -5,6 +5,7 @@ from typing_extensions import Protocol
 
 from . import effect
 from .immutable import Immutable
+from typing import Optional
 
 
 class Clock(Immutable):
@@ -21,7 +22,7 @@ class Clock(Immutable):
         """
         return effect.from_awaitable(asyncio.sleep(seconds))
 
-    def now(self, tz: datetime.tzinfo = None
+    def now(self, tz: Optional[datetime.tzinfo] = None
             ) -> effect.Success[datetime.datetime]:
         """
         Create an `Effect` that succeeds with the current datetime
@@ -60,7 +61,7 @@ def sleep(seconds: float) -> effect.Depends[HasClock, None]:
     ).with_repr(f"sleep({seconds})")
 
 
-def now(tz: datetime.tzinfo = None
+def now(tz: Optional[datetime.tzinfo] = None
         ) -> effect.Depends[HasClock, datetime.datetime]:
     """
     Create an `Effect` that succeeds with the current datetime

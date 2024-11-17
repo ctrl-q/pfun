@@ -1,5 +1,5 @@
 from string import printable
-from typing import (Any, Callable, Generic, Iterable, NoReturn, Tuple, TypeVar,
+from typing import (Optional, Any, Callable, Generic, Iterable, NoReturn, Tuple, TypeVar,
                     Union)
 
 from . import (Dict, Immutable, List, aio_trampoline, effect, either, maybe,
@@ -250,7 +250,7 @@ def dicts(
     keys: SearchStrategy[A],
     values: SearchStrategy[B],
     min_size: int = 0,
-    max_size: int = None
+    max_size: Optional[int] = None
 ) -> SearchStrategy[Dict[A, B]]:
     """
     Create a search strategy that produces `pfun.dict.Dict` instances
