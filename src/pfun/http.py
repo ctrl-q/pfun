@@ -81,9 +81,11 @@ class HTTP(Immutable, init=False):
         json_serialize: Callable[[Union[str, bytes]], Any] = json.dumps,
         version: aiohttp.http_writer.HttpVersion = aiohttp.HttpVersion11,
         cookie_jar: Optional[aiohttp.client.AbstractCookieJar] = None,
-        read_timeout: Optional[float] = None,
+        read_timeout: Union[
+            float, aiohttp.client._SENTINEL
+        ] = aiohttp.client.sentinel,
         conn_timeout: Optional[float] = None,
-        timeout: aiohttp.ClientTimeout = aiohttp.client.sentinel,
+        timeout: aiohttp.ClientTimeout | object = aiohttp.client.sentinel,
         raise_for_status: bool = False,
         connector_owner: bool = True,
         auto_decompress: bool = True,
