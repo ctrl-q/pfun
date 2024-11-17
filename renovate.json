@@ -35,5 +35,17 @@
         "(?<depName>[a-zA-Z0-9][a-zA-Z0-9._-]*[a-zA-Z0-9])(\\[[a-zA-Z0-9._-]+\\])?([~<>!]=?|==)(?<currentValue>[a-zA-Z0-9._-]+)"
       ]
     }
+  ],
+  "packageRules": [
+    {
+      "groupName": "mypy and related packages",
+      "matchPackagePatterns": ["mypy"],
+      "groupSlug": "mypy-packages"
+    },
+    {
+      "groupName": "mkdocs and related packages",
+      "matchPackagePatterns": ["mkdocs"],
+      "groupSlug": "mkdocs-packages"
+    }    
   ]
 }
