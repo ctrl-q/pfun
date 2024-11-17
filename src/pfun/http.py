@@ -3,9 +3,9 @@ from __future__ import annotations
 import http.cookies
 import json
 import ssl
-from typing import Optional, Any, Callable
+from typing import Any, Callable
 from typing import Dict as Dict_
-from typing import Iterable, Mapping, Union
+from typing import Iterable, Mapping, Optional, Union
 
 from typing_extensions import Protocol
 

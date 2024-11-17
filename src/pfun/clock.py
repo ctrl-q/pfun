@@ -1,11 +1,11 @@
 import asyncio
 import datetime
+from typing import Optional
 
 from typing_extensions import Protocol
 
 from . import effect
 from .immutable import Immutable
-from typing import Optional
 
 
 class Clock(Immutable):

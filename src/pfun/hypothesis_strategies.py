@@ -1,6 +1,6 @@
 from string import printable
-from typing import (Optional, Any, Callable, Generic, Iterable, NoReturn, Tuple, TypeVar,
-                    Union)
+from typing import (Any, Callable, Generic, Iterable, NoReturn, Optional,
+                    Tuple, TypeVar, Union)
 
 from . import (Dict, Immutable, List, aio_trampoline, effect, either, maybe,
                trampoline)
