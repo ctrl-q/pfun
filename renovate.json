@@ -30,9 +30,10 @@
   "customManagers": [
     {
       "customType": "regex",
-      "description": "Updates python packages in devcontainer Dockerfile",
+      "description": "Updates python packages in custom files",
       "fileMatch": [
-        "(^|/).devcontainer/Dockerfile$"
+        "(^|/).devcontainer/Dockerfile$",
+        "(^|/)\\.github/workflows/.*\\.yml$"
       ],
       "datasourceTemplate": "pypi",
       "matchStrings": [
