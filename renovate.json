@@ -1,6 +1,8 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "addLabels": ["dependencies"],
+  "addLabels": [
+    "dependencies"
+  ],
   "bumpVersion": "patch",
   "extends": [
     ":automergeAll",
@@ -16,7 +18,9 @@
     "preview:dockerVersions",
     "schedule:daily"
   ],
-  "lockFileMaintenance": { "enabled": true },
+  "lockFileMaintenance": {
+    "enabled": true
+  },
   "major": {
     "minimumReleaseAge": "1 month"
   },
@@ -33,6 +37,22 @@
       "datasourceTemplate": "pypi",
       "matchStrings": [
         "(?<depName>[a-zA-Z0-9][a-zA-Z0-9._-]*[a-zA-Z0-9])(\\[[a-zA-Z0-9._-]+\\])?([~<>!]=?|==)(?<currentValue>[a-zA-Z0-9._-]+)"
+      ]
+    }
+  ],
+  "packageRules": [
+    {
+      "groupName": "mypy and related packages",
+      "groupSlug": "mypy-packages",
+      "matchPackageNames": [
+        "/mypy/"
+      ]
+    },
+    {
+      "groupName": "mkdocs and related packages",
+      "groupSlug": "mkdocs-packages",
+      "matchPackageNames": [
+        "/mkdocs/"
       ]
     }
   ]
