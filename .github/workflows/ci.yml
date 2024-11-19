@@ -26,7 +26,7 @@ jobs:
         key: py3.10-ubuntu-latest-venv-cache-${{ hashFiles('**/poetry.lock') }}
     - name: Install poetry
       run: |
-        pip install poetry>=1.5.0
+        pip install poetry>=1.8.4
         poetry config virtualenvs.in-project true
     - name: Install dependencies
       run: |
@@ -52,7 +52,7 @@ jobs:
         key: py3.10-ubuntu-latest-venv-cache-${{ hashFiles('**/poetry.lock') }}
     - name: Install poetry
       run: |
-        pip install poetry>=1.5.0
+        pip install poetry>=1.8.4
         poetry config virtualenvs.in-project true
     - name: Install dependencies
       run: |
@@ -77,7 +77,7 @@ jobs:
         key: py3.10-ubuntu-latest-venv-cache-${{ hashFiles('**/poetry.lock') }}
     - name: Install poetry
       run: |
-        pip install poetry>=1.5.0
+        pip install poetry>=1.8.4
         poetry config virtualenvs.in-project true
     - name: Install dependencies
       run: |
@@ -112,7 +112,7 @@ jobs:
         key: py${{ matrix.python-version }}-${{ matrix.os }}-venv-cache-${{ hashFiles('**/poetry.lock') }}
     - name: Install poetry
       run: |
-        pip install poetry>=1.5.0
+        pip install poetry>=1.8.4
         poetry config virtualenvs.in-project true
     - name: Install dependencies
       run: |
@@ -145,7 +145,7 @@ jobs:
         key: py3.10-ubuntu-latest-venv-cache-${{ hashFiles('**/poetry.lock') }}
     - name: Install poetry
       run: |
-        pip install poetry>=1.5.0
+        pip install poetry>=1.8.4
         poetry config virtualenvs.in-project true
     - name: Download wheels and sdist
       uses: actions/download-artifact@fa0a91b85d4f404e444e00e005971372dc801d16 # v4
