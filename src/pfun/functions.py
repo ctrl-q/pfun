@@ -151,7 +151,7 @@ class Curry:
 
     def __init__(self, f: Callable):
         functools.wraps(f)(self)
-        self._f = f  # type: ignore
+        self._f = f
 
     def __repr__(self) -> str:
         return f'curry({repr(self._f)})'

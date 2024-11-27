@@ -112,14 +112,14 @@ class Effect(Generic[R, E, A], Immutable, Monad):
     def with_repr(self, repr_: str) -> Effect[R, E, A]: ...
 
     async def __call__(
-        self, r: R, max_processes: int = None, max_threads: int = None
+        self, r: R, max_processes: Optional[int] = None, max_threads: Optional[int] = None
     ) -> A: ...
     
     def run(
         self,
         r: R,
-        max_processes: int = None,
-        max_threads: int = None
+        max_processes: Optional[int] = None,
+        max_threads: Optional[int] = None
     ) -> A: ...
 
     @overload

@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 import urllib.parse
-from typing import Any, Iterable, Type, TypeVar, Union
+from typing import Any, Iterable, Optional, Type, TypeVar, Union
 
 from typing_extensions import Protocol
 
@@ -134,8 +134,9 @@ class SQL(Immutable, init=False):
         """
         return self.connection.get().map(lambda c: c.connection)
 
-    def execute(self, query: str, *args: Any,
-                timeout: float = None) -> Try[asyncpg.PostgresError, str]:
+    def execute(
+        self, query: str, *args: Any, timeout: Optional[float] = None
+    ) -> Try[asyncpg.PostgresError, str]:
         """
         Get an `Effect` that executes `query`
 
@@ -163,7 +164,7 @@ class SQL(Immutable, init=False):
         return self.get_connection().and_then(execute)
 
     def execute_many(
-        self, query: str, args: Iterable[Any], timeout: float = None
+        self, query: str, args: Iterable[Any], timeout: Optional[float] = None
     ) -> Try[asyncpg.PostgresError, Iterable[str]]:
         """
         Get an `Effect` that executes `query` for each argument \
@@ -193,7 +194,7 @@ class SQL(Immutable, init=False):
         return self.get_connection().and_then(execute_many)
 
     def fetch(self, query: str, *args: Any,
-              timeout: float = None
+              timeout: Optional[float] = None
               ) -> Try[asyncpg.PostgresError, List[Dict[str, Any]]]:
         """
         Get an `Effect` that executes `query` and returns the results
@@ -220,8 +221,9 @@ class SQL(Immutable, init=False):
 
         return self.get_connection().and_then(fetch)
 
-    def fetch_one(self, query: str, *args: Any,
-                  timeout: float = None) -> Try[SQLError, Dict[str, Any]]:
+    def fetch_one(
+        self, query: str, *args: Any, timeout: Optional[float] = None
+    ) -> Try[SQLError, Dict[str, Any]]:
         """
         Get an `Effect` that executes `query` and returns the first \
         result as a `Dict or fails with `EmptyResultSetError` if the \
@@ -285,7 +287,7 @@ def get_connection(
 
 @curry
 @add_repr
-def execute(query: str, *args: Any, timeout: float = None
+def execute(query: str, *args: Any, timeout: Optional[float] = None
             ) -> Effect[HasSQL, asyncpg.PostgresError, str]:
     """
     Get an `Effect` that executes `query`
@@ -314,8 +316,9 @@ def execute(query: str, *args: Any, timeout: float = None
 
 @curry
 @add_repr
-def execute_many(query: str, args: Iterable[Any], timeout: float = None
-                 ) -> Effect[HasSQL, asyncpg.PostgresError, Iterable[str]]:
+def execute_many(
+    query: str, args: Iterable[Any], timeout: Optional[float] = None
+) -> Effect[HasSQL, asyncpg.PostgresError, Iterable[str]]:
     """
     Get an `Effect` that executes `query` for each argument \
     in `args`
@@ -344,7 +347,7 @@ def execute_many(query: str, args: Iterable[Any], timeout: float = None
 
 @curry
 @add_repr
-def fetch(query: str, *args: Any, timeout: float = None
+def fetch(query: str, *args: Any, timeout: Optional[float] = None
           ) -> Effect[HasSQL, asyncpg.PostgresError, List[Dict[str, Any]]]:
     """
     Get an `Effect` that executes `query` and returns the results
@@ -369,7 +372,7 @@ def fetch(query: str, *args: Any, timeout: float = None
 
 @curry
 @add_repr
-def fetch_one(query: str, *args: Any, timeout: float = None
+def fetch_one(query: str, *args: Any, timeout: Optional[float] = None
               ) -> Effect[HasSQL, SQLError, Dict[str, Any]]:
     """
     Get an `Effect` that executes `query` and returns the first \
