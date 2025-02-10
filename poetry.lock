@@ -2752,4 +2752,4 @@ test = ["hypothesis"]
 [metadata]
 lock-version = "2.0"
 python-versions = ">= 3.10, < 3.12"
-content-hash = "b3b4220601aeed0778e6d2b7e1b991522d910277e68926b4818da183f5c24337"
+content-hash = "cd09424a4140cb3a01be3df0723f798a08f937d5a9234189516cbda1bd3c03bc"
