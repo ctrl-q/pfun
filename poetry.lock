@@ -1178,17 +1178,17 @@ stringcase = ">=1.2,<2.0"
 
 [[package]]
 name = "markdown"
-version = "3.4.4"
+version = "3.7"
 description = "Python implementation of John Gruber's Markdown."
 optional = false
-python-versions = ">=3.7"
+python-versions = ">=3.8"
 files = [
-    {file = "Markdown-3.4.4-py3-none-any.whl", hash = "sha256:a4c1b65c0957b4bd9e7d86ddc7b3c9868fb9670660f6f99f6d1bca8954d5a941"},
-    {file = "Markdown-3.4.4.tar.gz", hash = "sha256:225c6123522495d4119a90b3a3ba31a1e87a70369e03f14799ea9c0d7183a3d6"},
+    {file = "Markdown-3.7-py3-none-any.whl", hash = "sha256:7eb6df5690b81a1d7942992c97fad2938e956e79df20cbc6186e9c3a77b1c803"},
+    {file = "markdown-3.7.tar.gz", hash = "sha256:2ae2471477cfd02dbbf038d5d9bc226d40def84b4fe2986e49b59b6b472bbed2"},
 ]
 
 [package.extras]
-docs = ["mdx-gh-links (>=0.2)", "mkdocs (>=1.0)", "mkdocs-nature (>=0.4)"]
+docs = ["mdx-gh-links (>=0.2)", "mkdocs (>=1.5)", "mkdocs-gen-files", "mkdocs-literate-nav", "mkdocs-nature (>=0.6)", "mkdocs-section-index", "mkdocstrings[python]"]
 testing = ["coverage", "pyyaml"]
 
 [[package]]
@@ -1328,17 +1328,18 @@ min-versions = ["babel (==2.9.0)", "click (==7.0)", "colorama (==0.4)", "ghp-imp
 
 [[package]]
 name = "mkdocs-autorefs"
-version = "0.4.1"
+version = "1.4.0"
 description = "Automatically link across pages in MkDocs."
 optional = false
-python-versions = ">=3.7"
+python-versions = ">=3.9"
 files = [
-    {file = "mkdocs-autorefs-0.4.1.tar.gz", hash = "sha256:70748a7bd025f9ecd6d6feeba8ba63f8e891a1af55f48e366d6d6e78493aba84"},
-    {file = "mkdocs_autorefs-0.4.1-py3-none-any.whl", hash = "sha256:a2248a9501b29dc0cc8ba4c09f4f47ff121945f6ce33d760f145d6f89d313f5b"},
+    {file = "mkdocs_autorefs-1.4.0-py3-none-any.whl", hash = "sha256:bad19f69655878d20194acd0162e29a89c3f7e6365ffe54e72aa3fd1072f240d"},
+    {file = "mkdocs_autorefs-1.4.0.tar.gz", hash = "sha256:a9c0aa9c90edbce302c09d050a3c4cb7c76f8b7b2c98f84a7a05f53d00392156"},
 ]
 
 [package.dependencies]
 Markdown = ">=3.3"
+markupsafe = ">=2.0.1"
 mkdocs = ">=1.1"
 
 [[package]]
@@ -1399,43 +1400,28 @@ files = [
 
 [[package]]
 name = "mkdocstrings"
-version = "0.18.1"
+version = "0.28.1"
 description = "Automatic documentation from sources, for MkDocs."
 optional = false
-python-versions = ">=3.7"
+python-versions = ">=3.9"
 files = [
-    {file = "mkdocstrings-0.18.1-py3-none-any.whl", hash = "sha256:4053929356df8cd69ed32eef71d8f676a472ef72980c9ffd4f933ead1debcdad"},
-    {file = "mkdocstrings-0.18.1.tar.gz", hash = "sha256:fb7c91ce7e3ab70488d3fa6c073a4f827cdc319042f682ef8ea95459790d64fc"},
+    {file = "mkdocstrings-0.28.1-py3-none-any.whl", hash = "sha256:a5878ae5cd1e26f491ff084c1f9ab995687d52d39a5c558e9b7023d0e4e0b740"},
+    {file = "mkdocstrings-0.28.1.tar.gz", hash = "sha256:fb64576906771b7701e8e962fd90073650ff689e95eb86e86751a66d65ab4489"},
 ]
 
 [package.dependencies]
 Jinja2 = ">=2.11.1"
-Markdown = ">=3.3"
+Markdown = ">=3.6"
 MarkupSafe = ">=1.1"
-mkdocs = ">=1.2"
-mkdocs-autorefs = ">=0.3.1"
-mkdocstrings-python-legacy = ">=0.2"
+mkdocs = ">=1.4"
+mkdocs-autorefs = ">=1.3"
+mkdocs-get-deps = ">=0.2"
 pymdown-extensions = ">=6.3"
 
 [package.extras]
 crystal = ["mkdocstrings-crystal (>=0.3.4)"]
 python = ["mkdocstrings-python (>=0.5.2)"]
 python-legacy = ["mkdocstrings-python-legacy (>=0.2.1)"]
-
-[[package]]
-name = "mkdocstrings-python-legacy"
-version = "0.2.2"
-description = "A legacy Python handler for mkdocstrings."
-optional = false
-python-versions = ">=3.7"
-files = [
-    {file = "mkdocstrings-python-legacy-0.2.2.tar.gz", hash = "sha256:f0e7ec6a19750581b752acb38f6b32fcd1efe006f14f6703125d2c2c9a5c6f02"},
-    {file = "mkdocstrings_python_legacy-0.2.2-py3-none-any.whl", hash = "sha256:379107a3a5b8db9b462efc4493c122efe21e825e3702425dbd404621302a563a"},
-]
-
-[package.dependencies]
-mkdocstrings = ">=0.18"
-pytkdocs = ">=0.14"
 
 [[package]]
 name = "mslex"
@@ -2151,20 +2137,6 @@ files = [
 six = ">=1.5"
 
 [[package]]
-name = "pytkdocs"
-version = "0.16.1"
-description = "Load Python objects documentation."
-optional = false
-python-versions = ">=3.7"
-files = [
-    {file = "pytkdocs-0.16.1-py3-none-any.whl", hash = "sha256:a8c3f46ecef0b92864cc598e9101e9c4cf832ebbf228f50c84aa5dd850aac379"},
-    {file = "pytkdocs-0.16.1.tar.gz", hash = "sha256:e2ccf6dfe9dbbceb09818673f040f1a7c32ed0bffb2d709b06be6453c4026045"},
-]
-
-[package.extras]
-numpy-style = ["docstring_parser (>=0.7)"]
-
-[[package]]
 name = "pyyaml"
 version = "6.0.1"
 description = "YAML parser and emitter for Python"
@@ -2753,4 +2725,4 @@ test = ["hypothesis"]
 [metadata]
 lock-version = "2.0"
 python-versions = ">= 3.10, < 3.12"
-content-hash = "47286f3d1e53afa754d5c11f33dcb70909900626184fe01635ae11f752a55f1d"
+content-hash = "fa320c65dbfdfe4983fcb8d260baea2719638302aaee33261e95648b65ea3e4f"
